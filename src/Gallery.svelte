@@ -1,6 +1,16 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import Photo from './Photo.svelte';
+  const dispatch = createEventDispatcher();
   export let records;
+  export let pageNum;
+  let src = '../images/next.png';
+
+
+  function dispatchPageNum() {
+    let newNum = pageNum + 1
+    dispatch('newPage', {newNum})
+  }
 </script>
 
 <main>
@@ -23,6 +33,9 @@
         {/each}
       </ul>
     </section>
+    <footer>
+      <img {src} alt='next-arrow' on:click={dispatchPageNum}/>
+    </footer>
 </main>
 
 <style>
@@ -117,4 +130,15 @@ input:checked + .slide-container  .slide {
 
 input:checked + .slide-container .nav label { display: block; }
 
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+img {
+  width: 4vw;
+}
+img:hover {
+  cursor:pointer
+}
 </style>
