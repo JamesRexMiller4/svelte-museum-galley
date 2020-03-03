@@ -1,9 +1,8 @@
 <script>
   let src;
   let promise = getPhotos();
-
   async function getPhotos() {
-    const res = await fetch(`https://api.harvardartmuseums.org/image?apikey=${API_KEY}`);
+    const res = await fetch(`https://api.harvardartmuseums.org/image?apikey=API_KEY`);
 		const body = await res.json();
     src = body.records[0].baseimageurl
 		if (res.ok) {
