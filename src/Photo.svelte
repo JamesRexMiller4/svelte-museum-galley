@@ -9,9 +9,9 @@
 
 <style>
   img {
-    width: 229px;
-    height: 331px;
-    margin-top: 50px;
+    width: 238px;
+    height: 340px;
+    margin-top: 39px;
     margin-left: 10px;
   }
 </style>
