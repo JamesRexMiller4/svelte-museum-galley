@@ -1,29 +1,27 @@
 <script>
-	let hasEntered = false
 	import Photo from './Photo.svelte';
+	import Landing from './Landing.svelte';
+
+	let user = {hasEntered: true};
 
 	function toggleEnter() {
-		hasEntered = !hasEntered
-	}
+		user.hasEntered = !hasEntered
+	};
+
 </script>
-{#if !hasEntered}
-<main>
-	<header>
-		<h1>Harvard's Art Museum Collection</h1>
-	</header>
-	<Photo />
-</main>
+
+{#if user.hasEntered}
+	<Landing toggleEnter={toggleEnter}/>
 {:else}
-<main>
-	<header>
-		<h1>Harvard's Art Museum Collection</h1>
-	</header>
-	<Photo />
-</main>
+	<main>
+		<header>
+			<h1>Harvard's Art Museum Collection</h1>
+		</header>
+		<Photo />
+	</main>
 {/if}
 
 <style>
-
 	main {
 		width: 100vw;
 		height: 100vh;
@@ -43,5 +41,4 @@
 		font-size: 2.5rem;
 		padding: 40px;
 	}
-
 </style>
