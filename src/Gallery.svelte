@@ -22,9 +22,7 @@
           </li>
         {/each}
       </ul>
-    
     </section>
-		<Photo />
 </main>
 
 <style>
