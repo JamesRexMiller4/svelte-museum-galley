@@ -1,14 +1,26 @@
 <script>
+	let hasEntered = false
 	import Photo from './Photo.svelte';
+
+	function toggleEnter() {
+		hasEntered = !hasEntered
+	}
 </script>
-
-
+{#if !hasEntered}
 <main>
 	<header>
 		<h1>Harvard's Art Museum Collection</h1>
 	</header>
 	<Photo />
 </main>
+{:else}
+<main>
+	<header>
+		<h1>Harvard's Art Museum Collection</h1>
+	</header>
+	<Photo />
+</main>
+{/if}
 
 <style>
 
