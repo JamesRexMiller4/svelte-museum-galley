@@ -4,14 +4,14 @@
 
 	let user = {hasEntered: true};
 
-	function toggleEnter() {
-		user.hasEntered = !hasEntered
+	function handleToggle(event) {
+		user.hasEntered = event.user
 	};
 
 </script>
 
 {#if user.hasEntered}
-	<Landing toggleEnter={toggleEnter}/>
+	<Landing on:toggle={handleToggle} user={user}/>
 {:else}
 	<main>
 		<header>
