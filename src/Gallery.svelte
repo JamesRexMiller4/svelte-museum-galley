@@ -1,7 +1,6 @@
 <script>
   import Photo from './Photo.svelte';
   export let records;
-  console.log(records)
 </script>
 
 <main>
