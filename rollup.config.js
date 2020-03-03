@@ -3,6 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
+
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -46,7 +48,10 @@ export default {
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
-		production && terser()
+		production && terser(),
+		replace({
+      API_KEY: '3b95e4a0-5c11-11ea-9b44-2df473addcc2',
+    }),
 	],
 	watch: {
 		clearScreen: false
