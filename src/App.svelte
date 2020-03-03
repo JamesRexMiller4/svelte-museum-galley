@@ -1,25 +1,5 @@
 <script>
 	import Photo from './Photo.svelte';
-	let promise = getPhotos();
-	
-	async function getPhotos() {
-		const res = await fetch(`tutorial/random-number`);
-		const text = await res.text();
-
-		if (res.ok) {
-			return text;
-		} else {
-			throw new Error(text);
-		}
-	}
-	// const getPhotos = async (req, res) => {
-  //   let records = await fetch('https://api.harvardartmuseums.org/image?q=width:>220&apikey=3b95e4a0-5c11-11ea-9b44-2df473addcc2')
-  //   .then(res => res.json())
-  //   .then(data => console.log(data))
-  
-  //   src = records.records[0].baseimageurl
-  //   console.log(src)
-  // }
 </script>
 
 

@@ -1,21 +1,11 @@
 <script>
   let src;
-  // const getPhotos = async (req, res) => {
-  //   let records = await fetch('https://api.harvardartmuseums.org/image?q=width:>220&apikey=3b95e4a0-5c11-11ea-9b44-2df473addcc2')
-  //   .then(res => res.json())
-  //   .then(data => console.log(data))
-  
-  //   src = records.records[0].baseimageurl
-  //   console.log(src)
-  // }
   let promise = getPhotos();
 
-  	async function getPhotos() {
+  async function getPhotos() {
     const res = await fetch('https://api.harvardartmuseums.org/image?q=width:>220&apikey=3b95e4a0-5c11-11ea-9b44-2df473addcc2');
-    await console.log(res)
 		const body = await res.json();
-    await console.log(body)
-    const src = body.records[0].baseimageurl
+    src = body.records[4].baseimageurl
 		if (res.ok) {
 			return src;
 		} else {
@@ -30,7 +20,9 @@
   {#await promise}
     <p>...waiting</p>
   {:then number}
-    <img {p} alt='gallery-collection'/>
+    <div>
+      <img {src} alt='gallery-collection'/>
+    </div>
   {:catch error}
     <p style="color: red">{error.message}</p>
   {/await}
@@ -38,5 +30,15 @@
 
 
 <style>
-
+  div {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+  }
+  img {
+    width: 220px;
+    height: 324px;
+    margin-top: 60px;
+    margin-left: 10px;
+  }
 </style>
