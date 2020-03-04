@@ -20,3 +20,8 @@ Svelte
 ### Gallery 
 
 ![2020-03-03 22 10 24](https://user-images.githubusercontent.com/27719824/75847279-ff22b480-5d9b-11ea-8be9-a93802630466.gif)
+
+
+### Future Iterations 
+
+I would like to come back and learn how to write tests for a Svelte application. Additionally, there is a lot more to be seen and consumed by this API so it would be cool to have a more robust viewing experience and allow visitors the option to control what they see
