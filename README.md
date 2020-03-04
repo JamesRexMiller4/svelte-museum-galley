@@ -1,93 +1,22 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Svelte Museum Gallery 
+<img width="1397" alt="Screen Shot 2020-03-03 at 10 09 55 PM" src="https://user-images.githubusercontent.com/27719824/75847245-e74b3080-5d9b-11ea-90e7-19de4ebe1b6f.png">
 
----
+## Overview 
 
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+This single page web app is built using Svelte and consumes data from Harvard's Art Museum API. It allows a visitor to click through all the image records contained in the API, presenting the images in a pseudo gallery. The goal of this project was to simulate a take home tech challenge where we would be tasked to build an app in a language/framework that we may not already be familiar with, in 48-72 hours. This was my first time writing a web app in Svelte, and so there was some initial hurdles getting aquainted with the syntax, and how it implements async, if/else blocks, and for each mapping. 
 
 
-## Get started
 
-Install the dependencies...
+### Tech Stack
 
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+Svelte
 
 
-## Building and running in production mode
 
-To create an optimised version of the app:
+### WelcomePage
 
-```bash
-npm run build
-```
+<img width="1395" alt="Screen Shot 2020-03-03 at 10 15 54 PM" src="https://user-images.githubusercontent.com/27719824/75847488-97b93480-5d9c-11ea-88a4-27773ffd9afc.png">
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+### Gallery 
 
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+![2020-03-03 22 10 24](https://user-images.githubusercontent.com/27719824/75847279-ff22b480-5d9b-11ea-8be9-a93802630466.gif)
