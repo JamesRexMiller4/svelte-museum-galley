@@ -14,28 +14,28 @@
 </script>
 
 <main>
-		<header>
-			<h1>Harvard's Art Museum Collection</h1>
-		</header>
-    <section>
-      <ul class='slides'>
-        {#each records as record, i}
-        <input type="radio" name="radio-btn" id={`img-${i}`} checked />
-          <li class="slide-container">
-          <div class="slide">
-            <Photo photoUrl={record.baseimageurl}/>
-          </div>
-          <div class="nav">
-            <label for={`img-${i+1}`} class="prev">&#x2039;</label>
-            <label for={`img-${i-1}`} class="next">&#x203a;</label>
-          </div>
-          </li>
-        {/each}
-      </ul>
-    </section>
-    <footer>
-      <img {src} alt='next-arrow' on:click={dispatchPageNum}/>
-    </footer>
+  <header>
+    <h1>Harvard's Art Museum Collection</h1>
+  </header>
+  <section>
+    <ul class='slides'>
+      {#each records as record, i}
+      <input type="radio" name="radio-btn" id={`img-${i}`} checked />
+        <li class="slide-container">
+        <div class="slide">
+          <Photo photoUrl={record.baseimageurl}/>
+        </div>
+        <div class="nav">
+          <label for={`img-${i+1}`} class="prev">&#x2039;</label>
+          <label for={`img-${i-1}`} class="next">&#x203a;</label>
+        </div>
+        </li>
+      {/each}
+    </ul>
+  </section>
+  <footer>
+    <img {src} alt='next-arrow' on:click={dispatchPageNum}/>
+  </footer>
 </main>
 
 <style>
