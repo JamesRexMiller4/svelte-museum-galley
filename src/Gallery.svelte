@@ -1,28 +1,41 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import Photo from './Photo.svelte';
+  const dispatch = createEventDispatcher();
   export let records;
+  export let pageNum;
+  let src = '../images/next.png';
+
+
+  function dispatchPageNum() {
+    let newNum = pageNum + 1
+    dispatch('newPage', {newNum})
+  }
 </script>
 
 <main>
-		<header>
-			<h1>Harvard's Art Museum Collection</h1>
-		</header>
-    <section>
-      <ul class='slides'>
-        {#each records as record, i}
-        <input type="radio" name="radio-btn" id={`img-${i}`} checked />
-          <li class="slide-container">
-          <div class="slide">
-            <Photo photoUrl={record.baseimageurl}/>
-          </div>
-          <div class="nav">
-            <label for={`img-${i+1}`} class="prev">&#x2039;</label>
-            <label for={`img-${i-1}`} class="next">&#x203a;</label>
-          </div>
-          </li>
-        {/each}
-      </ul>
-    </section>
+  <header>
+    <h1>Harvard's Art Museum Collection</h1>
+  </header>
+  <section>
+    <ul class='slides'>
+      {#each records as record, i}
+      <input type="radio" name="radio-btn" id={`img-${i}`} checked />
+        <li class="slide-container">
+        <div class="slide">
+          <Photo photoUrl={record.baseimageurl}/>
+        </div>
+        <div class="nav">
+          <label for={`img-${i+1}`} class="prev">&#x2039;</label>
+          <label for={`img-${i-1}`} class="next">&#x203a;</label>
+        </div>
+        </li>
+      {/each}
+    </ul>
+  </section>
+  <footer>
+    <img {src} alt='next-arrow' on:click={dispatchPageNum}/>
+  </footer>
 </main>
 
 <style>
@@ -117,4 +130,15 @@ input:checked + .slide-container  .slide {
 
 input:checked + .slide-container .nav label { display: block; }
 
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+img {
+  width: 4vw;
+}
+img:hover {
+  cursor:pointer
+}
 </style>
